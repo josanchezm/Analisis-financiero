@@ -1,0 +1,159 @@
+:root {
+    --very-light-pink: #C7C7C7;
+    --text-input-field: #F7F7F7;
+    --hospital-green: #ACD9B2;
+    --light-gray: rgb(211, 211, 211);
+    --light-grey: rgb(211, 211, 211);
+    --blue: rgba(64, 72, 237, 0.916);
+    --sm: 1.0rem;
+    --md: 1.2rem;
+    --lg: 1.4rem;
+    --p: 1.2rem;
+    --h2: 1.6rem;
+    --h1: 2rem;
+}
+
+/* Estilos globales */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    display: grid;
+    place-items: center;
+    height: 100vh;
+    border-radius: 50px;
+    border-radius: 50px;
+    border-radius: 50px;
+    background:#8aaeff;
+}
+
+ul, a {
+    list-style: none;
+    text-decoration: none;
+}
+
+/* Estilos del header */
+
+header {
+    text-align: center;
+    padding: 10px;
+}
+
+header div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+header div picture {
+    width: 50px;
+}
+
+header div picture img {
+    width: 100%;
+    object-fit: contain;
+}
+
+header div h1 {
+    margin-bottom: 10px;
+    font-size: var(--h1);
+}
+
+header p {
+    font-size: var(--lg);
+}
+
+/* Estilos del main  */
+
+main {
+    padding: 10px;
+}
+
+.Informacion {
+    margin-bottom: 15px;
+}
+
+.Informacion > form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-items: center;
+    text-align: center;
+    gap: 10px;
+    font-size: var(--lg);
+}
+
+.Informacion > form input, .topN > form input {
+    padding: 3px 10px;
+    background-color: var(--text-input-field);
+    border-radius: 8px;
+}
+
+.Informacion > form button, .topN > form button {
+    padding: 3px 17px;
+    font-size: var(--lg);
+}
+
+.Informacion > form button:active, .topN > form button:active {
+    background-color: var(--hospital-green);
+    border: 1px solid var(--light-gray);
+}
+
+form > p {
+    border: 2px solid #000;
+    border-radius: 8px;
+    padding: 10px 15px;
+    background-color: rgb(243, 250, 255);
+    font-size: var(--md);
+    opacity: 0; 
+    transition-duration: 1.5s;
+}
+
+.topN > h2 {
+    margin: 15px 0 10px;
+    font-size: var(--lg);
+    text-align: center;
+}
+
+.topN > form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 10px;
+    font-size: var(--lg);
+}
+
+/* Estilos del footer  */
+
+footer {
+    padding: 10px;
+}
+
+footer ul {
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 5px;
+    font-size: var(--md);
+}
+
+@media (max-width: 319px) {
+    footer ul {
+        font-size: 1.1rem;
+    }
+}
+
+

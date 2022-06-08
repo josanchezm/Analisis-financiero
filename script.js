@@ -1,82 +1,213 @@
-const colombia = [];
+let colombia = [];
+let monedaValue;
+
+let prueba = [];
+
+prueba.push({
+  name: "Camila",
+  salary: 0,
+  fixed_costs: 400,
+  borrowing: 40
+});
+prueba.push({
+  name: "Nath",
+  salary: 1500,
+  fixed_costs: 500,
+  borrowing: 40
+});
+prueba.push({
+  name: "Luciana",
+  salary: 1500,
+  fixed_costs: 500,
+  borrowing: 35
+});
 
 colombia.push({
-    name: "Eduardo",
-    salary: 500.5
-})
+  name: "Camila",
+  salary: 500,
+  fixed_costs: 0,
+  borrowing: 0
+});
 colombia.push({
-    name: "Camila",
-    salary: 1500
-})
+  name: "Nath",
+  salary: 1500,
+  fixed_costs: 350,
+  borrowing: 40
+});
 colombia.push({
-    name: "Andrea",
-    salary: 3700.7
-})
+  name: "Luisa",
+  salary: 1800,
+  fixed_costs: 350,
+  borrowing: 40
+});
 colombia.push({
-    name: "Victor",
-    salary: 300.95
-})
+  name: "Laura",
+  salary: 1000,
+  fixed_costs: 350,
+  borrowing: 45
+});
 colombia.push({
-    name: "Andres",
-    salary: 5850
-})
+  name: "Daniela",
+  salary: 2200,
+  fixed_costs: 350,
+  borrowing: 0
+});
 colombia.push({
-    name: "Jaime",
-    salary: 5770.77
-})
+  name: "Esperancita",
+  salary: 200,
+  fixed_costs: 350,
+  borrowing: 40
+});
 colombia.push({
-    name: "Alejandra",
-    salary: 5770.60
-})
+  name: "Carla",
+  salary: 500,
+  fixed_costs: 350,
+  borrowing: 40
+});
 colombia.push({
-    name: "Sofia",
-    salary: 3700.6
-})
+  name: "Antonieta",
+  salary: 1500,
+  fixed_costs: 350,
+  borrowing: 40
+});
 colombia.push({
-    name: "Yuli",
-    salary: 320
-})
+  name: "Alicia",
+  salary: 1300,
+  fixed_costs: 350,
+  borrowing: 40
+});
 colombia.push({
-    name: "Brayan",
-    salary: 550
-})
+  name: "Ana",
+  salary: 2400,
+  fixed_costs: 350,
+  borrowing: 40
+});
 colombia.push({
-    name: "William",
-    salary: 750.1
-})
+  name: "Julia",
+  salary: 3400,
+  fixed_costs: 350,
+  borrowing: 40
+});
 colombia.push({
-    name: "Tatiana",
-    salary: 1250.6
-})
+  name: "Rosa",
+  salary: 400,
+  fixed_costs: 350,
+  borrowing: 40
+});
 colombia.push({
-    name: "Mateo",
-    salary: 1000
-})
+  name: "Angélica",
+  salary: 400,
+  fixed_costs: 350,
+  borrowing: 40
+});
 colombia.push({
-    name: "Liliana",
-    salary: 2010
-})
+  name: "Tatiana",
+  salary: 400,
+  fixed_costs: 350,
+  borrowing: 40
+});
 colombia.push({
-    name: "Eva",
-    salary: 270.7
-})
+  name: "Lorena",
+  salary: 600,
+  fixed_costs: 350,
+  borrowing: 40
+});
 colombia.push({
-    name: "Cristian",
-    salary: 310
-})
+  name: "Carolina",
+  salary: 1600,
+  fixed_costs: 350,
+  borrowing: 40
+});
 colombia.push({
-    name: "Oscar",
-    salary: 5000
-})
+  name: "Fernanda",
+  salary: 2600,
+  fixed_costs: 350,
+  borrowing: 40
+});
 colombia.push({
-    name: "Jesus",
-    salary: 6000
-})
+  name: "Nora",
+  salary: 1000,
+  fixed_costs: 350,
+  borrowing: 40
+});
 colombia.push({
-    name: "Karen",
-    salary: 590
-})
+  name: "Gisselle",
+  salary: 2000,
+  fixed_costs: 1350,
+  borrowing: 40
+});
 colombia.push({
-    name: "Cecilia",
-    salary: 5800.9
-})    
+  name: "Bill Gates",
+  salary: 100000000,
+  fixed_costs: 1350,
+  borrowing: 40
+});
+
+let conjunto = [];
+
+function calculoFinanzas() {
+  // Trayendo los valores del usuario para evaluarlos en los argumentos de las funciones
+
+  const nombreInput = document.getElementById("nombre");
+  const nombreValue = nombreInput.value;
+
+  const ingresosInput = document.getElementById("ingresos");
+  const ingresosValue = ingresosInput.value;
+
+  const egresosInput = document.getElementById("egresos");
+  const egresosValue = egresosInput.value;
+
+  const endeudamientoInput = document.getElementById("porcentaje_endeudamiento");
+  const endeudamientoValue = endeudamientoInput.value;
+
+  conjunto.push({
+    name: nombreValue,
+    salary: parseFloat(ingresosValue),
+    fixed_costs: parseFloat(egresosValue),
+    borrowing: parseFloat(endeudamientoValue)
+  });
+
+  const monedaInput = document.getElementById("moneda");
+  monedaValue = monedaInput.value;
+
+  // Calculo promedio y mediana
+
+  const promedio_mediana = mediaMedianaGeneral(conjunto);
+
+  // Calculo de la capacidad de endeudamiento, su media y mediana y la capacidad de ahorro
+
+  const endeudamiento_ahorro = capacidadDeEndeudamientoYAhorro(conjunto);
+
+  const calculo = `${promedio_mediana} ${endeudamiento_ahorro}`;
+
+  const resultado = document.getElementById("resultado");
+  resultado.style.opacity = '100%';
+  resultado.innerText = calculo;
+
+  return calculo;
+};
+
+console.log(conjunto);
+
+function calculoTopN() {
+  // top n%: promedio, mediana, capacidad de endeudamiento(promedio, mediana) y capacidad de ahorro
+
+  alert("si desea filtrar un conjunto distinto, recargue la pagina");
+
+  const topNInput = document.getElementById("top_n_porciento");
+  const topNValue = parseInt(topNInput.value);
+  
+  const calculo = topN(conjunto,topNValue);
+  const resultado = document.getElementById("resultado_2");
+  
+  if(calculo === '') {
+    resultado.innerText = '';
+  }
+  else {
+    resultado.style.opacity = '100%';
+    resultado.innerText = calculo;
+  }
+  return calculo;
+};
+
+

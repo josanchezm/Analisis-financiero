@@ -1,0 +1,72 @@
+@media (min-width: 768px) {
+    :root {
+        --sm: 1.3rem;
+        --md: 1.5rem;
+        --lg: 1.7rem;
+        --p: 1.5rem;
+        --h2: 1.9rem;
+        --h1: 2.3rem;
+    }
+    header, main, footer {
+        padding: 15px;
+    }
+    .Informacion > form, .topN > form {
+        gap: 13px;
+    }
+    .topN > h2 {
+        margin: 15px 0 15px;
+    }
+    footer ul {
+        margin-bottom: 13px;
+        gap: 10px;
+        font-size: var(--md);
+    }
+}
+
+@media (min-width: 1024px) {
+    header div {
+        flex-direction: row;
+        align-items: center;
+        margin-bottom: 15px;
+    }
+    header div picture {
+        width: 60px;
+    }
+    footer {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        margin-top: 20px;
+        padding: 15px 20px 0px;
+    }
+
+}
+
+@media (min-width: 1440px) {
+    :root {
+        --sm: 1.5rem;
+        --md: 1.7rem;
+        --lg: 1.9rem;
+        --p: 1.7rem;
+        --h2: 2.1rem;
+        --h1: 2.5rem;
+    }
+    .Informacion > form button, .topN > form button {
+        padding: 3px 17px;
+        font-size: 1.7rem;
+    }
+}
+
+@media (min-width: 1860px) {
+    :root {
+        --sm: 1.7rem;
+        --md: 1.9rem;
+        --lg: 2.1rem;
+        --p: 1.9rem;
+        --h2: 2.3rem;
+        --h1: 2.7rem;
+    }
+    .Informacion > form, .topN > form {
+        gap: 20px;
+    }
+}

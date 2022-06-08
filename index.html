@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -6,10 +6,64 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculadora de mediana salarial</title>
     <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./css/tablet-desktop.css" media="(min-width: 768px)">
 </head>
 <body>
-    <h1>Salarios</h1>
+    <header>
+        <div>
+            <picture><img src="https://upload.wikimedia.org/wikipedia/commons/1/1a/Money_Emblem_Crop_293.png" alt="Icono de finanzas"></picture>
+            <h1>Analisis de finanzas</h1>
+        </div>
+        <p>Aqui podras calcular promedio, mediana, capacidad de endeudamiento y capacidad de ahorro tanto para tus finanzas como para las de un conjunto de personas</p>
+    </header>
 
+    <main>
+        <section class="Informacion">
+            <form action="Informacion__form">
+                <label for="nombre">Ingrese el nombre</label>
+                <input type="text" id="nombre" placeholder="nombre">
+                
+                <label for="ingresos">Indique los ingresos</label>
+                <input type="number" id="ingresos" placeholder="ingresos">
+    
+                <label for="egresos">Indique los egresos</label>
+                <input type="number" id="egresos" placeholder="egresos">
+                
+                <label for="porcentaje_endeudamiento">Indique el porcentaje de endeudamiento deseado (recomendable que no pase del 40%)</label>
+                <input type="number" id="porcentaje_endeudamiento" placeholder="% endeudamiento">
+    
+                <label for="moneda">Indique su moneda</label>
+                <input type="text" id="moneda" placeholder="moneda">
+                
+                <button type="button" onclick="calculoFinanzas()">Calculo</button>
+                <p id="resultado"></p>
+            </form>
+        </section>
+                <hr>
+        <section class="topN">
+            <h2>Aqui podra filtrar los elementos de su conjunto con los salarios mas altos, en funcion del porcentaje que indique, para aplicar el analisis financiero</h2>
+            <form action="topN__form">
+                <label for="top_n_porciento">Indique el top n% a evaluar</label>
+                <input type="number" id="top_n_porciento" placeholder="top n%">
+                
+                <button type="button" onclick="calculoTopN()">Calculo</button>
+                <p id="resultado_2"></p>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <ul>
+            <li>Autor: Jaime Sanchez</li>
+            <li>Metodo: HTML, CSS y JS</li>
+        </ul>
+        <ul>
+            <li>Contacto:</li>
+            <li><a href="https://www.facebook.com/rainy697">Facebook</a></li>
+            <li><a href="https://www.linkedin.com/in/jaime-orlando-s%C3%A1nchez-mendieta-4bba6b1a1/">Linkedin</a></li>
+            <li><a href="https://github.com/josanchezm">Github</a></li>
+        </ul>
+    </footer>
 
     <script src="./script.js"></script>
     <script src="./script_1.js"></script>
